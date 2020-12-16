@@ -1,8 +1,11 @@
 # SequenceHomology
-Python C extension module to calculate homology between a peptide and a protein sequence. Code generates a list of all possible peptides, residue start and end indices, maximum number of residue matches and homology value in tuples.  
-
+Python C extension module to calculate homology between a __peptide__ and a __protein sequence__. Code generates a list of all possible _peptides_, residue _start_ and _end_ indices, _maximum number of residue matches_ and _homology_ value in tuples.  
 
 ### Install/uninstall module in develop mode:
+
+Use `pip install .` (to install) and `pip install -e .` (to developer install) the package.
+
+To invoke `setup.py` directly:
 ```bash
 # install
 python setup.py develop
