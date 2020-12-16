@@ -33,10 +33,10 @@ struct Epitopes *get_info(char *protein, int window_size) {
 		return 0;
 
 	int i = 0;
-	while(i < strlen(protein)){
+	while(i < (int)strlen(protein)){
 		int start = i+1;
 		int end = (int)window_size + i;
-		if(end > strlen(protein)) break;
+		if(end > (int)strlen(protein)) break;
 		char *peptide = substring(protein, i, window_size);
 
 		array[i].sequence = strdup(peptide);
@@ -144,4 +144,6 @@ PyInit_homology_module(void){
 	Py_INCREF(SequenceError);
 
 	PyModule_AddObject(m, "error", SequenceError); // register it to the python interpertor
+
+	return m;
 }

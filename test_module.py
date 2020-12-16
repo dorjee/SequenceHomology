@@ -33,5 +33,5 @@ for _start, _end, _peptide, _matches, _homology in list_of_homolog_result:
 max_matches = max(matches)
 
 ''' | *brief*: Prints number of residue matches, homology value, and a list of tuple(predicted peptide, peptide start, peptide end) '''
-print(max_matches, max_homology, zip(peptides, start, end))
+print(max_matches, max_homology, list(zip(peptides, start, end)))
     

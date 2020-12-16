@@ -15,7 +15,21 @@ python setup.py develop --uninstall
 python test_module.py
 ```
 
-### Output syntax: 
-```bash 
-[number_of_residue_matches, homology_value, [predicted_peptide], [peptide_start], [peptide_end]]
+Above test contains following arguments:
+```python
+threshold = 100
+epitope_sequence = 'AVSGGLNTLVLRAVL'
+protein_sequence = (
+    'YIASRTSIAGRAWENTIVDLESDGKPQKLGTTGSNKSLQSAGFPAGLTYSQLMTLKDSMMQLDPS'
+    'AKTWIDIEGRPEDPVEIAIYQPMSGCYIHFFREPTDLKQFKQDAKYSHGIDVADLFPAQPGLTSA'
+    'VIEALPRNMVLTCQGSDDIKKLLDSQGRRDIKLIDISLNKAESRKFENAVWDQCKDLCHMHTGVV'
+    'VEKKKRGGKEEITPH'
+)
+```
+
+### Expected output:
+```bash
+# output syntax:
+# number_of_residue_matches, homology_value, [(predicted_peptide, peptide_start, peptide_end)]
+4 26.666666666666668 [('AGRAWENTIVDLESD', 9, 23), ('PAQPGLTSAVIEALP', 122, 136), ('LTSAVIEALPRNMVL', 127, 141)]
 ```
